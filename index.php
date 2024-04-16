@@ -1,5 +1,4 @@
 <?php
-
 /* 
 
 Milestone 1: scriviamo tutto (logica e layout) in un unico file index.php
@@ -16,6 +15,7 @@ Milestone 4: invece di visualizzare il messaggio di success nella index.php, in 
 Milestone 5: sullo stesso stile del metodo old() di Laravel, far vedere come utilizzare $_GET per valorizzare il campo di input in caso il controllo del server dia esito negativo (KO)
 
 */
+require_once __DIR__ . './functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,27 +23,24 @@ Milestone 5: sullo stesso stile del metodo old() di Laravel, far vedere come uti
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrazione Newsletter</title>
-  <!-- Link a Bootstrap CSS -->
+  <title>PHP Newsletter</title>
+  <!-- /BOOTSTRAP -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <h2>Registrazione alla Newsletter</h2>
-    <form action="registrazione_newsletter.php" method="POST">
+    <form action="" method="GET">
       <div class="form-group">
         <label for="nome">Nome: </label>
-        <input type="text" class="form-control" name="nome" required>
+        <input type="text" class="form-control w-50" name="nome">
       </div>
-      <div class="form-group">
+      <div>
         <label for="email">Email: </label>
-        <input type="email" class="form-control" name="email" required>
+        <input type="email" class="w-50" name="email">
       </div>
-      <button type="submit" class="btn btn-primary">Registrati</button>
+      <button type="submit" class="btn btn-primary w-25">Registrati</button>
     </form>
   </div>
-
-  <!-- Link a Bootstrap JS (opzionale, necessario solo per alcune funzionalità di Bootstrap) -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
