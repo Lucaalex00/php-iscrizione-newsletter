@@ -15,7 +15,7 @@ Milestone 4: invece di visualizzare il messaggio di success nella index.php, in 
 Milestone 5: sullo stesso stile del metodo old() di Laravel, far vedere come utilizzare $_GET per valorizzare il campo di input in caso il controllo del server dia esito negativo (KO)
 
 */
-require_once __DIR__ . './functions.php';
+include_once __DIR__ . './functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +30,17 @@ require_once __DIR__ . './functions.php';
 <body>
   <div class="container">
     <h2>Registrazione alla Newsletter</h2>
+    <?php
+    if(emailChecker('email')){
+        echo "Login Successful !";
+        
+    } else {
+        echo "Login Failed, Retry !";
+    }
+
+
+
+    ?>
     <form action="" method="GET">
       <div class="form-group">
         <label for="nome">Nome: </label>
@@ -37,7 +48,7 @@ require_once __DIR__ . './functions.php';
       </div>
       <div>
         <label for="email">Email: </label>
-        <input type="email" class="w-50" name="email">
+        <input type="text" class="form-control w-50" name="email">
       </div>
       <button type="submit" class="btn btn-primary w-25">Registrati</button>
     </form>

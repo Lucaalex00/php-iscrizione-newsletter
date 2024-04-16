@@ -4,9 +4,9 @@
         if(isset($_GET[$email])) {
             $emailInput = $_GET[$email];
             if(strpos($emailInput, '@') !== false && strpos($emailInput, '.') !== false){
-                echo "Log in Successful";
+                return true; /* Applica TRUE */
             } else{
-                echo "Error, Insert a valid Email";
+                return false; /* Applica FALSE */
             }
         }
 
