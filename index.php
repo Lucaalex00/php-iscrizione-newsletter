@@ -33,11 +33,13 @@ include_once __DIR__ . './functions.php';
     <?php
     if(emailChecker('email')){
         echo "<span class='text-success'>Login Successful ! </span>";
-        echo "<script> 
+        /* echo "<script> 
             setTimeout(function(){
             window.location.href= 'https://boolean.careers/'; 
             }, 3000); 
-            </script>";
+            </script>"; */
+            header("Location: ./thankyou.php");
+            
         
     } else {
         echo "<span class='text-danger'>Login Failed, Retry !</span>";
