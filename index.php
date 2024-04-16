@@ -32,10 +32,15 @@ include_once __DIR__ . './functions.php';
     <h2>Registrazione alla Newsletter</h2>
     <?php
     if(emailChecker('email')){
-        echo "Login Successful !";
+        echo "<span class='text-success'>Login Successful ! </span>";
+        echo "<script> 
+            setTimeout(function(){
+            window.location.href= 'https://boolean.careers/'; 
+            }, 3000); 
+            </script>";
         
     } else {
-        echo "Login Failed, Retry !";
+        echo "<span class='text-danger'>Login Failed, Retry !</span>";
     }
 
 
