@@ -16,6 +16,9 @@ Milestone 5: sullo stesso stile del metodo old() di Laravel, far vedere come uti
 
 */
 include_once __DIR__ . './functions.php';
+
+$nameValue= $_GET['name'];
+$emailValue= $_GET['email'];
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +42,7 @@ include_once __DIR__ . './functions.php';
             }, 3000); 
             </script>"; */
             header("Location: ./thankyou.php");
-            
+
         
     } else {
         echo "<span class='text-danger'>Login Failed, Retry !</span>";
@@ -51,11 +54,11 @@ include_once __DIR__ . './functions.php';
     <form action="" method="GET">
       <div class="form-group">
         <label for="nome">Nome: </label>
-        <input type="text" class="form-control w-50" name="nome">
+        <input type="text" class="form-control w-50" name="name" value="<?=isset($nameValue) ? $nameValue : '' ?>">
       </div>
       <div>
         <label for="email">Email: </label>
-        <input type="text" class="form-control w-50" name="email">
+        <input type="text" class="form-control w-50" name="email" value="<?=isset($emailValue) ? $emailValue : '' ?>">
       </div>
       <button type="submit" class="btn btn-primary w-25">Registrati</button>
     </form>
