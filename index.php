@@ -34,7 +34,7 @@ $emailValue= $_GET['email'];
   <div class="container">
     <h2>Registrazione alla Newsletter</h2>
     <?php
-    if(emailChecker('email')){
+    if(!empty($emailValue) && !empty($nameValue) && (emailChecker('email'))){
         echo "<span class='text-success'>Login Successful ! </span>";
         /* echo "<script> 
             setTimeout(function(){
@@ -42,12 +42,16 @@ $emailValue= $_GET['email'];
             }, 3000); 
             </script>"; */
             header("Location: ./thankyou.php");
-
-        
-    } else {
-        echo "<span class='text-danger'>Login Failed, Retry !</span>";
-    }
-
+        }     
+        elseif(empty($emailValue) && empty($nameValue)){
+        echo "<span class='text-warning'>Insert your INFO</span>";
+        } elseif (empty($emailValue) && !empty($nameValue)){
+            echo "<span class='text-danger'>Login Failed, Need an EMAIL!</span>"; 
+        } elseif(!empty($emailValue) && empty($nameValue)){
+            echo "<span class='text-danger'>Login Failed, Need a NAME </span>";
+        } elseif(!empty($emailValue) && !empty($nameValue)) {
+            echo "<span class='text-danger'>Login Failed, retry with correct Values !</span>";
+        } 
 
 
     ?>
